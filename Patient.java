@@ -43,6 +43,7 @@ public class Patient {
 	public boolean printPatientlist() {
 		if (this.nextPatient == null) {
 			// came to end of list so can finish printing
+			this.printPatient(); // print this instance of the patient
 			return false;
 		} else {
 			this.printPatient();
@@ -56,6 +57,9 @@ public class Patient {
 		while (listNavigator.nextPatient != null) {
 			listNavigator=listNavigator.nextPatient;
 			listSize++;
+		}
+		if (listSize>0) {
+			listSize++; //need to add this instance of the patient to the list
 		}
 		return listSize;
 	}
